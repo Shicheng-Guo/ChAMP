@@ -39,9 +39,9 @@ champ.MVP <- function(beta.norm = myNorm$beta,
         message("Your dataset has more than two groups. ChAMP will compare the first two groups.")
     }
 	
-        controls=pd[which(pd$Sample_Group==groupLabel[1]),]
-        test=pd[which(pd$Sample_Group==groupLabel[2]),]
-        all=c(controls$Sample_Name,test$Sample_Name)
+        controls=pd[which(as.character(pd$Sample_Group))==groupLabel[1]),]
+        test=pd[which(as.character(pd$Sample_Group))==groupLabel[2]),]
+        all=as.character(c(controls$Sample_Name,test$Sample_Name))
         data=matrix(NA,length(row.names(beta.norm)),length(all))
         row.names(data)=row.names(beta.norm)
         colnames(data)=all
