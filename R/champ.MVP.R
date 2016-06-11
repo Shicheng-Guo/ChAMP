@@ -70,7 +70,8 @@ champ.MVP <- function(beta.norm = myNorm$beta,
 					j=j+1
 				}else{
 
-					print("There is an error in this dataset")
+					print(colnames(data))
+					print(colnames(beta.norm))
 				}
 			}
 		}
