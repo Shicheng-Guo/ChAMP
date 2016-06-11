@@ -67,7 +67,7 @@ champ.DMR <- function(betaNorm=myNorm$beta,
         #Beta <- replace(Beta,which(Beta >= 0.999),0.999)
         Y <- log((Beta/(1-Beta)),2)
         
-        Bumps <- bumphunter(Y,
+        Bumps <- bumphunter(data.matrix(Y),
                             design=X,
                             chr=Anno[bumphunter.idx,]$CHR,
                             pos=Anno[bumphunter.idx,]$MAPINFO,
