@@ -25,9 +25,9 @@ champ.MVP <- function(beta.norm = myNorm$beta,
         data(probe.features)	
     }
 	
-    groupLabel=compare.group
+    groupLabel=as.character(compare.group)
     
-    checkLabel=unique(pd$Sample_Group)
+    checkLabel=as.character(unique(pd$Sample_Group))
     
     if(any(!(groupLabel %in% checkLabel))){
         message("The group labels that have been defined ",groupLabel," do not exist in your sample sheet. Please edit the Sample_Group column or the compare.group parameter. ChAMP will use information in your Sample_group columnn.")
