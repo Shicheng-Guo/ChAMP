@@ -41,7 +41,7 @@ champ.MVP <- function(beta.norm = myNorm$beta,
 	
         controls=pd[which(as.character(pd$Sample_Group)==groupLabel[1]),]
         test=pd[which(as.character(pd$Sample_Group)==groupLabel[2]),]
-        all=as.character(c(controls$Sample_Name,test$Sample_Name))
+        all=c(as.character(controls$Sample_Name),as.character(test$Sample_Name))
         data=matrix(NA,length(row.names(beta.norm)),length(all))
         row.names(data)=row.names(beta.norm)
         colnames(data)=all
